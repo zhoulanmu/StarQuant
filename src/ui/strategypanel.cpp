@@ -2761,6 +2761,23 @@ void StrategyPanel::onAddFavoriteClicked()
     savePersonalSettings();
 }
 
+void StrategyPanel::selectViewSymbol(const QString& symbol, const QString& name)
+{
+    if (!isValidMarketSymbol(symbol)) {
+        return;
+    }
+    selectSymbol(symbol, name.isEmpty() ? stockNameForSymbol(symbol) : name, true);
+}
+
+void StrategyPanel::addFavorite(const QString& symbol, const QString& name)
+{
+    if (!isValidMarketSymbol(symbol)) {
+        return;
+    }
+    addFavoriteSymbol(symbol, name.isEmpty() ? stockNameForSymbol(symbol) : name);
+    savePersonalSettings();
+}
+
 void StrategyPanel::onRemoveFavoriteClicked()
 {
     if (!m_watchlistWidget || !m_watchlistWidget->currentItem()) {

@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui/logindialog.h"
+#include "ui/legalconsentdialog.h"
 #include <QApplication>
 #include <QIcon>
 #include <QLocale>
@@ -11,6 +12,10 @@ int main(int argc, char *argv[])
     QApplication::setApplicationName(QStringLiteral("星策 StarQuant"));
     QApplication::setOrganizationName(QStringLiteral("StarQuant"));
     QApplication::setWindowIcon(QIcon(QStringLiteral(":/icons/starquant_stars.png")));
+
+    if (!LegalConsentDialog::ensureAccepted()) {
+        return 0;
+    }
 
     QLocale::setDefault(QLocale(QLocale::Chinese, QLocale::China));
 

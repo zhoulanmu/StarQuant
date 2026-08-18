@@ -37,6 +37,8 @@ add_executable(StarQuant WIN32
     src/mainwindow.ui
     src/market/marketdata.cpp
     src/market/marketdata.h
+    src/screener/stockscreener.cpp
+    src/screener/stockscreener.h
     src/indicator/indicators.cpp
     src/indicator/indicators.h
     src/strategy/strategybase.cpp
@@ -51,6 +53,8 @@ add_executable(StarQuant WIN32
     src/ui/marketpanel.cpp
     src/ui/marketpanel.h
     src/ui/marketpanel.ui
+    src/ui/screenerpanel.cpp
+    src/ui/screenerpanel.h
     src/ui/chartpanel.cpp
     src/ui/chartpanel.h
     src/ui/chartpanel.ui
@@ -68,6 +72,8 @@ add_executable(StarQuant WIN32
     src/ui/logindialog.cpp
     src/ui/logindialog.h
     src/ui/logindialog.ui
+    src/ui/legalconsentdialog.cpp
+    src/ui/legalconsentdialog.h
 )
 
 target_link_libraries(StarQuant PRIVATE ${REQUIRED_LIBS_QUALIFIED})
@@ -75,6 +81,7 @@ target_link_libraries(StarQuant PRIVATE ${REQUIRED_LIBS_QUALIFIED})
 target_include_directories(StarQuant PRIVATE
     ${PROJECT_SOURCE_DIR}/src
     ${PROJECT_SOURCE_DIR}/src/market
+    ${PROJECT_SOURCE_DIR}/src/screener
     ${PROJECT_SOURCE_DIR}/src/indicator
     ${PROJECT_SOURCE_DIR}/src/strategy
     ${PROJECT_SOURCE_DIR}/src/ui

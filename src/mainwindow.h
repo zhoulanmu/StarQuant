@@ -11,6 +11,7 @@
 #include "ui/statisticspanel.h"
 #include "ui/signalsignalpanel.h"
 #include "ui/newspanel.h"
+#include "ui/screenerpanel.h"
 
 class QTabWidget;
 class QWidget;
@@ -51,6 +52,9 @@ private slots:
     void onFavoriteSellRequested(const QString& symbol, double price, double volume);
     void onManualTradeQuoteUpdated(const MarketData& data);
     void onManualTradeQuoteError(const QString& message);
+    void onScreenerViewStock(const QString& symbol, const QString& name);
+    void onScreenerAddFavorite(const QString& symbol, const QString& name);
+    void showLegalInformation();
 
 private:
     struct StrategyRuntime;
@@ -65,6 +69,7 @@ private:
     QWidget* createStrategyTab();
     QWidget* createPersonalTab();
     QWidget* createNewsTab();
+    QWidget* createScreenerTab();
     void configureStrategyRuntime(StrategyRuntime* runtime, const StrategyConfig& config);
     void updateSignalIndicators();
     void resetStrategyProgressTracking(StrategyRuntime* runtime, const StrategyConfig& config);
@@ -96,6 +101,7 @@ private:
     StatisticsPanel* m_statisticsPanel;
     SignalPanel* m_signalPanel;
     NewsPanel* m_newsPanel;
+    ScreenerPanel* m_screenerPanel;
     QTabWidget* m_mainTabs;
     QTabWidget* m_accountTabs;
     QTimer* m_strategyStartTimer;

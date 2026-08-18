@@ -91,6 +91,8 @@ public:
     QWidget* takeTradeLogWidget(QWidget* parent);
     QWidget* takeWatchlistWidget(QWidget* parent);
     void setManualTradePrice(const QString& symbol, double price);
+    void selectViewSymbol(const QString& symbol, const QString& name = QString());
+    void addFavorite(const QString& symbol, const QString& name = QString());
 
 private slots:
     void on_paramChanged();

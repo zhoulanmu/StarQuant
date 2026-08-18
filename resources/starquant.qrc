@@ -3,4 +3,9 @@
         <file alias="starquant_stars.png">icons/starquant_stars.png</file>
         <file alias="checkbox_check.png">icons/checkbox_check.png</file>
     </qresource>
+    <qresource prefix="/legal">
+        <file alias="risk-disclosure.md">legal/risk-disclosure.md</file>
+        <file alias="privacy-notice.md">legal/privacy-notice.md</file>
+        <file alias="data-and-algorithm.md">legal/data-and-algorithm.md</file>
+    </qresource>
 </RCC>

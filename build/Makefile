@@ -306,6 +306,30 @@ src/market/marketdata.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\StarQuant.dir\build.make CMakeFiles/StarQuant.dir/src/market/marketdata.cpp.s
 .PHONY : src/market/marketdata.cpp.s
 
+src/screener/stockscreener.obj: src/screener/stockscreener.cpp.obj
+.PHONY : src/screener/stockscreener.obj
+
+# target to build an object file
+src/screener/stockscreener.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\StarQuant.dir\build.make CMakeFiles/StarQuant.dir/src/screener/stockscreener.cpp.obj
+.PHONY : src/screener/stockscreener.cpp.obj
+
+src/screener/stockscreener.i: src/screener/stockscreener.cpp.i
+.PHONY : src/screener/stockscreener.i
+
+# target to preprocess a source file
+src/screener/stockscreener.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\StarQuant.dir\build.make CMakeFiles/StarQuant.dir/src/screener/stockscreener.cpp.i
+.PHONY : src/screener/stockscreener.cpp.i
+
+src/screener/stockscreener.s: src/screener/stockscreener.cpp.s
+.PHONY : src/screener/stockscreener.s
+
+# target to generate assembly for a file
+src/screener/stockscreener.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\StarQuant.dir\build.make CMakeFiles/StarQuant.dir/src/screener/stockscreener.cpp.s
+.PHONY : src/screener/stockscreener.cpp.s
+
 src/strategy/movingaveragestrategy.obj: src/strategy/movingaveragestrategy.cpp.obj
 .PHONY : src/strategy/movingaveragestrategy.obj
 
@@ -450,6 +474,30 @@ src/ui/chartpanel.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\StarQuant.dir\build.make CMakeFiles/StarQuant.dir/src/ui/chartpanel.cpp.s
 .PHONY : src/ui/chartpanel.cpp.s
 
+src/ui/legalconsentdialog.obj: src/ui/legalconsentdialog.cpp.obj
+.PHONY : src/ui/legalconsentdialog.obj
+
+# target to build an object file
+src/ui/legalconsentdialog.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\StarQuant.dir\build.make CMakeFiles/StarQuant.dir/src/ui/legalconsentdialog.cpp.obj
+.PHONY : src/ui/legalconsentdialog.cpp.obj
+
+src/ui/legalconsentdialog.i: src/ui/legalconsentdialog.cpp.i
+.PHONY : src/ui/legalconsentdialog.i
+
+# target to preprocess a source file
+src/ui/legalconsentdialog.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\StarQuant.dir\build.make CMakeFiles/StarQuant.dir/src/ui/legalconsentdialog.cpp.i
+.PHONY : src/ui/legalconsentdialog.cpp.i
+
+src/ui/legalconsentdialog.s: src/ui/legalconsentdialog.cpp.s
+.PHONY : src/ui/legalconsentdialog.s
+
+# target to generate assembly for a file
+src/ui/legalconsentdialog.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\StarQuant.dir\build.make CMakeFiles/StarQuant.dir/src/ui/legalconsentdialog.cpp.s
+.PHONY : src/ui/legalconsentdialog.cpp.s
+
 src/ui/logindialog.obj: src/ui/logindialog.cpp.obj
 .PHONY : src/ui/logindialog.obj
 
@@ -521,6 +569,30 @@ src/ui/newspanel.s: src/ui/newspanel.cpp.s
 src/ui/newspanel.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\StarQuant.dir\build.make CMakeFiles/StarQuant.dir/src/ui/newspanel.cpp.s
 .PHONY : src/ui/newspanel.cpp.s
+
+src/ui/screenerpanel.obj: src/ui/screenerpanel.cpp.obj
+.PHONY : src/ui/screenerpanel.obj
+
+# target to build an object file
+src/ui/screenerpanel.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\StarQuant.dir\build.make CMakeFiles/StarQuant.dir/src/ui/screenerpanel.cpp.obj
+.PHONY : src/ui/screenerpanel.cpp.obj
+
+src/ui/screenerpanel.i: src/ui/screenerpanel.cpp.i
+.PHONY : src/ui/screenerpanel.i
+
+# target to preprocess a source file
+src/ui/screenerpanel.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\StarQuant.dir\build.make CMakeFiles/StarQuant.dir/src/ui/screenerpanel.cpp.i
+.PHONY : src/ui/screenerpanel.cpp.i
+
+src/ui/screenerpanel.s: src/ui/screenerpanel.cpp.s
+.PHONY : src/ui/screenerpanel.s
+
+# target to generate assembly for a file
+src/ui/screenerpanel.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\StarQuant.dir\build.make CMakeFiles/StarQuant.dir/src/ui/screenerpanel.cpp.s
+.PHONY : src/ui/screenerpanel.cpp.s
 
 src/ui/signalsignalpanel.obj: src/ui/signalsignalpanel.cpp.obj
 .PHONY : src/ui/signalsignalpanel.obj
@@ -624,6 +696,9 @@ help:
 	@echo ... src/market/marketdata.obj
 	@echo ... src/market/marketdata.i
 	@echo ... src/market/marketdata.s
+	@echo ... src/screener/stockscreener.obj
+	@echo ... src/screener/stockscreener.i
+	@echo ... src/screener/stockscreener.s
 	@echo ... src/strategy/movingaveragestrategy.obj
 	@echo ... src/strategy/movingaveragestrategy.i
 	@echo ... src/strategy/movingaveragestrategy.s
@@ -642,6 +717,9 @@ help:
 	@echo ... src/ui/chartpanel.obj
 	@echo ... src/ui/chartpanel.i
 	@echo ... src/ui/chartpanel.s
+	@echo ... src/ui/legalconsentdialog.obj
+	@echo ... src/ui/legalconsentdialog.i
+	@echo ... src/ui/legalconsentdialog.s
 	@echo ... src/ui/logindialog.obj
 	@echo ... src/ui/logindialog.i
 	@echo ... src/ui/logindialog.s
@@ -651,6 +729,9 @@ help:
 	@echo ... src/ui/newspanel.obj
 	@echo ... src/ui/newspanel.i
 	@echo ... src/ui/newspanel.s
+	@echo ... src/ui/screenerpanel.obj
+	@echo ... src/ui/screenerpanel.i
+	@echo ... src/ui/screenerpanel.s
 	@echo ... src/ui/signalsignalpanel.obj
 	@echo ... src/ui/signalsignalpanel.i
 	@echo ... src/ui/signalsignalpanel.s

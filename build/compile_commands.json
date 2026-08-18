@@ -25,6 +25,12 @@
 },
 {
   "directory": "D:/QTquant/build",
+  "command": "D:\\code\\Qt6.5.3\\Tools\\mingw1120_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/StarQuant.dir/includes_CXX.rsp  -finput-charset=UTF-8 -fexec-charset=UTF-8 -g -std=gnu++17 -o CMakeFiles\\StarQuant.dir\\src\\screener\\stockscreener.cpp.obj -c D:\\QTquant\\src\\screener\\stockscreener.cpp",
+  "file": "D:/QTquant/src/screener/stockscreener.cpp",
+  "output": "CMakeFiles/StarQuant.dir/src/screener/stockscreener.cpp.obj"
+},
+{
+  "directory": "D:/QTquant/build",
   "command": "D:\\code\\Qt6.5.3\\Tools\\mingw1120_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/StarQuant.dir/includes_CXX.rsp  -finput-charset=UTF-8 -fexec-charset=UTF-8 -g -std=gnu++17 -o CMakeFiles\\StarQuant.dir\\src\\indicator\\indicators.cpp.obj -c D:\\QTquant\\src\\indicator\\indicators.cpp",
   "file": "D:/QTquant/src/indicator/indicators.cpp",
   "output": "CMakeFiles/StarQuant.dir/src/indicator/indicators.cpp.obj"
@@ -58,6 +64,12 @@
   "command": "D:\\code\\Qt6.5.3\\Tools\\mingw1120_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/StarQuant.dir/includes_CXX.rsp  -finput-charset=UTF-8 -fexec-charset=UTF-8 -g -std=gnu++17 -o CMakeFiles\\StarQuant.dir\\src\\ui\\marketpanel.cpp.obj -c D:\\QTquant\\src\\ui\\marketpanel.cpp",
   "file": "D:/QTquant/src/ui/marketpanel.cpp",
   "output": "CMakeFiles/StarQuant.dir/src/ui/marketpanel.cpp.obj"
+},
+{
+  "directory": "D:/QTquant/build",
+  "command": "D:\\code\\Qt6.5.3\\Tools\\mingw1120_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/StarQuant.dir/includes_CXX.rsp  -finput-charset=UTF-8 -fexec-charset=UTF-8 -g -std=gnu++17 -o CMakeFiles\\StarQuant.dir\\src\\ui\\screenerpanel.cpp.obj -c D:\\QTquant\\src\\ui\\screenerpanel.cpp",
+  "file": "D:/QTquant/src/ui/screenerpanel.cpp",
+  "output": "CMakeFiles/StarQuant.dir/src/ui/screenerpanel.cpp.obj"
 },
 {
   "directory": "D:/QTquant/build",
@@ -100,6 +112,12 @@
   "command": "D:\\code\\Qt6.5.3\\Tools\\mingw1120_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/StarQuant.dir/includes_CXX.rsp  -finput-charset=UTF-8 -fexec-charset=UTF-8 -g -std=gnu++17 -o CMakeFiles\\StarQuant.dir\\src\\ui\\logindialog.cpp.obj -c D:\\QTquant\\src\\ui\\logindialog.cpp",
   "file": "D:/QTquant/src/ui/logindialog.cpp",
   "output": "CMakeFiles/StarQuant.dir/src/ui/logindialog.cpp.obj"
+},
+{
+  "directory": "D:/QTquant/build",
+  "command": "D:\\code\\Qt6.5.3\\Tools\\mingw1120_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/StarQuant.dir/includes_CXX.rsp  -finput-charset=UTF-8 -fexec-charset=UTF-8 -g -std=gnu++17 -o CMakeFiles\\StarQuant.dir\\src\\ui\\legalconsentdialog.cpp.obj -c D:\\QTquant\\src\\ui\\legalconsentdialog.cpp",
+  "file": "D:/QTquant/src/ui/legalconsentdialog.cpp",
+  "output": "CMakeFiles/StarQuant.dir/src/ui/legalconsentdialog.cpp.obj"
 },
 {
   "directory": "D:/QTquant/build",

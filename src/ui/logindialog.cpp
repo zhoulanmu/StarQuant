@@ -14,8 +14,8 @@ LoginDialog::LoginDialog(QWidget *parent)
 {
     ui->setupUi(this);
 
-    setMinimumSize(480, 360);
-    setWindowTitle(QStringLiteral("星策 StarQuant - 登录"));
+    setMinimumSize(480, 300);
+    setWindowTitle(QStringLiteral("星策 StarQuant - 本地研究模式"));
 
     ui->verticalLayout->setSpacing(18);
     ui->verticalLayout->setContentsMargins(35, 35, 35, 35);
@@ -23,16 +23,14 @@ LoginDialog::LoginDialog(QWidget *parent)
     ui->horizontalLayout->setSpacing(12);
 
     ui->titleLabel->setText(QStringLiteral("星策 StarQuant"));
-    ui->usernameEdit->setPlaceholderText(QStringLiteral("客户端用户名"));
-    ui->passwordEdit->setPlaceholderText(QStringLiteral("客户端密码"));
-    ui->passwordEdit->setEchoMode(QLineEdit::Password);
-    ui->passwordEdit->show();
-    ui->loginBtn->setText(QStringLiteral("客户端登录"));
-    ui->cancelBtn->setText(QStringLiteral("取消"));
-    ui->tipLabel->setText(QStringLiteral("请输入客户端用户名和密码，或使用游客看盘直接进入。"));
+    ui->usernameEdit->hide();
+    ui->passwordEdit->hide();
+    ui->loginBtn->hide();
+    ui->cancelBtn->setText(QStringLiteral("退出"));
+    ui->tipLabel->setText(QStringLiteral("当前版本仅提供本地研究与模拟交易，不提供在线账号、支付或真实交易。不会收集或保存密码。"));
     ui->tipLabel->setWordWrap(true);
 
-    m_guestButton = new QPushButton(QStringLiteral("游客看盘"), this);
+    m_guestButton = new QPushButton(QStringLiteral("进入本地研究模式"), this);
     m_guestButton->setObjectName(QStringLiteral("guestBtn"));
     ui->horizontalLayout->insertWidget(1, m_guestButton);
 
@@ -132,19 +130,8 @@ QString LoginDialog::accountHint() const
 
 void LoginDialog::accept()
 {
-    const QString username = ui->usernameEdit->text().trimmed();
-    const QString password = ui->passwordEdit->text();
-
-    if (username.isEmpty() || password.isEmpty()) {
-        QMessageBox::warning(this, QStringLiteral("提示"),
-                             QStringLiteral("请输入客户端用户名和密码，或点击游客看盘。"));
-        return;
-    }
-
-    m_accountHint = username;
-    m_authenticated = true;
-    m_guestMode = false;
-    QDialog::accept();
+    QMessageBox::information(this, QStringLiteral("在线账户未接入"),
+                             QStringLiteral("正式商业账户、订阅与支付服务尚未接入，请使用本地研究模式。"));
 }
 
 void LoginDialog::reject()

@@ -1,11 +1,13 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "ui/strategypanel.h"
+#include "ui/legalconsentdialog.h"
 #include "indicator/indicators.h"
 #include "strategy/movingaveragestrategy.h"
 #include "strategy/prosperitygrowthstrategy.h"
 
 #include <QAbstractItemView>
+#include <QAction>
 #include <QDateTime>
 #include <QDialog>
 #include <QDoubleSpinBox>
@@ -17,6 +19,8 @@
 #include <QJsonObject>
 #include <QHeaderView>
 #include <QLabel>
+#include <QMenu>
+#include <QMenuBar>
 #include <QMessageBox>
 #include <QPushButton>
 #include <QSettings>
@@ -554,6 +558,7 @@ MainWindow::MainWindow(bool guestMode, const QString& accountName, QWidget *pare
     , m_statisticsPanel(nullptr)
     , m_signalPanel(nullptr)
     , m_newsPanel(nullptr)
+    , m_screenerPanel(nullptr)
     , m_mainTabs(nullptr)
     , m_accountTabs(nullptr)
     , m_strategyStartTimer(nullptr)
@@ -571,6 +576,10 @@ MainWindow::MainWindow(bool guestMode, const QString& accountName, QWidget *pare
 {
     ui->setupUi(this);
     setWindowTitle(QStringLiteral("星策 StarQuant - 先以模拟谋方略，再持真仓逐行情"));
+
+    QMenu* complianceMenu = menuBar()->addMenu(QStringLiteral("帮助与合规"));
+    QAction* legalAction = complianceMenu->addAction(QStringLiteral("法律、隐私与风险说明"));
+    connect(legalAction, &QAction::triggered, this, &MainWindow::showLegalInformation);
 
     const QString darkTheme =
         "QMainWindow { background-color: #253b6e; }"
@@ -673,6 +682,9 @@ MainWindow::MainWindow(bool guestMode, const QString& accountName, QWidget *pare
     ui->signalPanel = m_signalPanel;
 
     m_newsPanel = new NewsPanel(this);
+    m_screenerPanel = new ScreenerPanel(this);
+    connect(m_screenerPanel, &ScreenerPanel::viewStockRequested, this, &MainWindow::onScreenerViewStock);
+    connect(m_screenerPanel, &ScreenerPanel::addFavoriteRequested, this, &MainWindow::onScreenerAddFavorite);
     loadAccountState();
     ui->strategyPanel->setAccountNames(accountNames());
 
@@ -742,6 +754,7 @@ void MainWindow::buildTabbedLayout()
     m_mainTabs->setElideMode(Qt::ElideNone);
     m_mainTabs->setUsesScrollButtons(false);
     m_mainTabs->addTab(createMainTab(), QStringLiteral("主页"));
+    m_mainTabs->addTab(createScreenerTab(), QStringLiteral("选股"));
     m_mainTabs->addTab(createStrategyTab(), QStringLiteral("策略"));
     m_mainTabs->addTab(createPersonalTab(), QStringLiteral("账户"));
     m_mainTabs->addTab(createNewsTab(), QStringLiteral("新闻"));
@@ -815,6 +828,16 @@ QWidget* MainWindow::createStrategyTab()
 
     scrollArea->setWidget(content);
     rootLayout->addWidget(scrollArea);
+    return tab;
+}
+
+QWidget* MainWindow::createScreenerTab()
+{
+    auto* tab = new QWidget(m_mainTabs);
+    auto* rootLayout = new QVBoxLayout(tab);
+    rootLayout->setContentsMargins(0, 0, 0, 0);
+    m_screenerPanel->setParent(tab);
+    rootLayout->addWidget(m_screenerPanel);
     return tab;
 }
 
@@ -1655,6 +1678,26 @@ void MainWindow::onFavoriteSelected(const QString& symbol)
     m_manualPriceQuoteSymbol = normalized;
     m_manualTradeMarketData->setSymbol(normalized);
     m_manualTradeMarketData->startSimulation();
+}
+
+void MainWindow::onScreenerViewStock(const QString& symbol, const QString& name)
+{
+    ui->strategyPanel->selectViewSymbol(symbol, name);
+    if (m_mainTabs) {
+        m_mainTabs->setCurrentIndex(0);
+    }
+    ui->statusbar->showMessage(QStringLiteral("已切换至 %1 行情。").arg(name.isEmpty() ? symbol : name), 3000);
+}
+
+void MainWindow::onScreenerAddFavorite(const QString& symbol, const QString& name)
+{
+    ui->strategyPanel->addFavorite(symbol, name);
+    ui->statusbar->showMessage(QStringLiteral("已加入自选：%1").arg(name.isEmpty() ? symbol : name), 3000);
+}
+
+void MainWindow::showLegalInformation()
+{
+    LegalConsentDialog::showInformation(this);
 }
 
 void MainWindow::onFavoriteBuyRequested(const QString& symbol, double price, double volume)
